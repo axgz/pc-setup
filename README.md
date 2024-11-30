@@ -28,7 +28,7 @@ rclone lsd OneDrive:
 
 ``` bash
 # mount
-rclone mount --vfs-cache-mode full -vfs-cache-max-size 50GB --daemon OneDrive: ~/OneDrive
+rclone mount --vfs-cache-mode full --vfs-cache-max-size 50G --daemon OneDrive: ~/OneDrive
 
 # unmount
 fusermount -u ~/OneDrive
