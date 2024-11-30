@@ -10,7 +10,7 @@ Environment=REMOTE_NAME="%i"
 Environment=MOUNT_DIR="%h/%i"
 
 # Mount
-ExecStart=/usr/bin/rclone mount --vfs-cache-mode full --vfs-cache-max-size 50GB "${REMOTE_NAME}:" "${MOUNT_DIR}"
+ExecStart=/usr/bin/rclone mount --vfs-cache-mode full --vfs-cache-max-size 50G "${REMOTE_NAME}:" "${MOUNT_DIR}"
 ExecStartPost=notify-send "Mounted ${REMOTE_NAME} to ${MOUNT_DIR}"
 
 # Unmount
