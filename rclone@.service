@@ -1,0 +1,26 @@
+[Unit]
+Description=rclone %i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+
+Environment=REMOTE_NAME="%i"
+Environment=MOUNT_DIR="%h/%i"
+
+# Mount
+ExecStart=/usr/bin/rclone mount --vfs-cache-mode full --vfs-cache-max-size 50GB "${REMOTE_NAME}:" "${MOUNT_DIR}"
+ExecStartPost=notify-send "Mounted ${REMOTE_NAME} to ${MOUNT_DIR}"
+
+# Unmount
+ExecStop=/bin/fusermount -u "${MOUNT_DIR}"
+ExecStopPost=notify-send "Disconnected ${REMOTE_NAME}"
+
+# Restart info
+TimeoutSec=30
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
