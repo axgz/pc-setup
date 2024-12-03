@@ -40,3 +40,21 @@ fusermount -u ~/OneDrive
 systemctl --user start rclone@OneDrive
 systemctl --user enable rclone@OneDrive
 ```
+
+### Create symlinks to user directories
+
+- Desktop
+- Documents
+- Downloads
+- Pictures
+- Music
+- Videos
+
+``` bash
+# example redirect Desktop to OneDrive
+mkdir -p ~/OneDrive/Desktop
+cp -r ~/Desktop/* ~/OneDrive/Desktop/
+mv ~/Desktop ~/Desktop_orig
+ln s ~/OneDrive/Desktop ~/Desktop
+rm ~/Desktop_orig
+```
