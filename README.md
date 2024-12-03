@@ -6,15 +6,7 @@ Use the latest non LTS version of Kubuntu.
 
 > Make sure to follow any advice under Known Issues immeditaly after installation.
 
-Create a bootable USB using dd.
-
-``` bash
-# list devices
-lsblk
-
-# where /dev/sdb is the desired USB device
-sudo dd if=~/Downloads/kubuntu_version.iso of=/dev/sdb bs=1M status=progress
-```
+Create a bootable USB using "Startup Disk Creator".
 
 ## OneDrive
 
