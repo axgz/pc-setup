@@ -1,5 +1,18 @@
 # pc-setup
 
+## System
+
+Use the latest non LTS version of Kubuntu.
+
+> Make sure to follow any advice under Known Issues immeditaly after installation.
+
+Create a bootable USB using dd.
+
+``` bash
+# where /dev/sdb is the desired USB device partition
+sudo dd if=~/Downloads/kubuntu_version.iso of=/dev/sdb bs=1M status=progress
+```
+
 ## OneDrive
 
 ### Prerequisites
