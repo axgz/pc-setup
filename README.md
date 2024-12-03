@@ -9,7 +9,10 @@ Use the latest non LTS version of Kubuntu.
 Create a bootable USB using dd.
 
 ``` bash
-# where /dev/sdb is the desired USB device partition
+# list devices
+lsblk
+
+# where /dev/sdb is the desired USB device
 sudo dd if=~/Downloads/kubuntu_version.iso of=/dev/sdb bs=1M status=progress
 ```
 
