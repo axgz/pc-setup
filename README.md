@@ -59,10 +59,46 @@ systemctl --user enable rclone@OneDrive
 - Videos
 
 ``` bash
-# example redirect Desktop to OneDrive
+# create dirs in OneDrive
 mkdir -p ~/OneDrive/Desktop
+mkdir -p ~/OneDrive/Documents
+mkdir -p ~/OneDrive/Pictures
+mkdir -p ~/OneDrive/Music
+mkdir -p ~/OneDrive/Videos
+```
+
+``` bash
+# (optional) copy existing files over
 cp -r ~/Desktop/* ~/OneDrive/Desktop/
+cp -r ~/Documents/* ~/OneDrive/Documents/
+cp -r ~/Pictures/* ~/OneDrive/Pictures/
+cp -r ~/Music/* ~/OneDrive/Music/
+cp -r ~/Videos/* ~/OneDrive/Videos/
+```
+
+``` bash
+# move existing dirs
 mv ~/Desktop ~/Desktop_orig
-ln s ~/OneDrive/Desktop ~/Desktop
-rm ~/Desktop_orig
+mv ~/Documents ~/Documents_orig
+mv ~/Pictures ~/Pictures_orig
+mv ~/Music ~/Music_orig
+mv ~/Videos ~/Videos_orig
+```
+
+``` bash
+# create symlinks
+ln -s ~/OneDrive/Desktop ~/Desktop
+ln -s ~/OneDrive/Documents ~/Documents
+ln -s ~/OneDrive/Pictures ~/Pictures
+ln -s ~/OneDrive/Music ~/Music
+ln -s ~/OneDrive/Videos ~/Videos
+```
+
+``` bash
+# clean up
+rm -rf ~/Desktop_orig
+rm -rf ~/Documents_orig
+rm -rf ~/Pictures_orig
+rm -rf ~/Music_orig
+rm -rf ~/Videos_orig
 ```
