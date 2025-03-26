@@ -13,7 +13,7 @@ Create a bootable USB using "Startup Disk Creator".
 ### Prerequisites
 
 ``` bash
-sudo apt-get install rclone
+sudo apt-get install rclone  <- not maintained, use .deb package from rclone website instead
 sudo touch /etc/systemd/user/rclone@.service
 ```
 
